@@ -1,0 +1,503 @@
+<!-- 
+  Project: CSS Button Styles
+  Created: Sunday, 14 March 2025
+  Author: Mr. Gaber Samir
+  Tutorial: https://www.youtube.com/channel/UC8YqgNZW1CwhbDv9Cl-23BQ
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Button Styles</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .button-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .button-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            background: #3498db;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.4rem;
+        }
+        
+        .card-content {
+            padding: 25px;
+        }
+        
+        .button-demo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            min-height: 150px;
+        }
+        
+        .code-container {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-top: 20px;
+        }
+        
+        .comment {
+            color: #7fdbda;
+        }
+        
+        .selector {
+            color: #addb67;
+        }
+        
+        .property {
+            color: #f08d49;
+        }
+        
+        .value {
+            color: #cc99cd;
+        }
+        
+        /* Solid Button Style */
+        .solid-btn {
+            background-color: #3498db; /* Solid blue background */
+            color: white; /* White text color */
+            border: none; /* Remove default border */
+            padding: 15px 30px; /* Vertical and horizontal padding */
+            font-size: 1.1rem; /* Font size */
+            border-radius: 5px; /* Slightly rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth transition for background */
+        }
+        
+        .solid-btn:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+        }
+        
+        /* Outline Button Style */
+        .outline-btn {
+            background-color: transparent; /* Transparent background */
+            color: #3498db; /* Blue text color */
+            border: 2px solid #3498db; /* Blue border */
+            padding: 15px 30px; /* Vertical and horizontal padding */
+            font-size: 1.1rem; /* Font size */
+            border-radius: 5px; /* Slightly rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: all 0.3s; /* Smooth transition for all properties */
+        }
+        
+        .outline-btn:hover {
+            background-color: #3498db; /* Blue background on hover */
+            color: white; /* White text on hover */
+        }
+        
+        /* Rounded Button Style */
+        .rounded-btn {
+            background-color: #9b59b6; /* Purple background */
+            color: white; /* White text color */
+            border: none; /* Remove default border */
+            padding: 15px 30px; /* Vertical and horizontal padding */
+            font-size: 1.1rem; /* Font size */
+            border-radius: 30px; /* Fully rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: all 0.3s; /* Smooth transition for all properties */
+        }
+        
+        .rounded-btn:hover {
+            background-color: #8e44ad; /* Darker purple on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+        
+        /* Gradient Button Style */
+        .gradient-btn {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4); /* Gradient background */
+            color: #333; /* Dark text color */
+            border: none; /* Remove default border */
+            padding: 15px 30px; /* Vertical and horizontal padding */
+            font-size: 1.1rem; /* Font size */
+            border-radius: 5px; /* Slightly rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: all 0.3s; /* Smooth transition for all properties */
+        }
+        
+        .gradient-btn:hover {
+            background: linear-gradient(to right, #fad0c4, #ff9a9e); /* Reverse gradient on hover */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+        }
+        
+        /* Hover Animation Button Style */
+        .hover-animation-btn {
+            background-color: #2ecc71; /* Green background */
+            color: white; /* White text color */
+            border: none; /* Remove default border */
+            padding: 15px 30px; /* Vertical and horizontal padding */
+            font-size: 1.1rem; /* Font size */
+            border-radius: 5px; /* Slightly rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            position: relative; /* Positioning context for pseudo-element */
+            overflow: hidden; /* Hide overflow from pseudo-element */
+            z-index: 1; /* Ensure text is above pseudo-element */
+        }
+        
+        .hover-animation-btn::before {
+            content: ''; /* Empty content for pseudo-element */
+            position: absolute; /* Absolute positioning */
+            top: 0; /* Position from top */
+            left: 0; /* Position from left */
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            background-color: #27ae60; /* Darker green */
+            transform: translateX(-100%); /* Start from left outside */
+            transition: transform 0.3s; /* Smooth transition for transform */
+            z-index: -1; /* Behind the text */
+        }
+        
+        .hover-animation-btn:hover::before {
+            transform: translateX(0); /* Slide in on hover */
+        }
+        
+        /* Glowing Effect Button Style */
+        .glowing-btn {
+            background-color: #e74c3c; /* Red background */
+            color: white; /* White text color */
+            border: none; /* Remove default border */
+            padding: 15px 30px; /* Vertical and horizontal padding */
+            font-size: 1.1rem; /* Font size */
+            border-radius: 5px; /* Slightly rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: all 0.3s; /* Smooth transition for all properties */
+        }
+        
+        .glowing-btn:hover {
+            box-shadow: 0 0 15px #e74c3c; /* Red glow effect on hover */
+            transform: translateY(-2px); /* Slight lift on hover */
+        }
+        
+        /* Box Shadow Button Style */
+        .shadow-btn {
+            background-color: #f39c12; /* Orange background */
+            color: white; /* White text color */
+            border: none; /* Remove default border */
+            padding: 15px 30px; /* Vertical and horizontal padding */
+            font-size: 1.1rem; /* Font size */
+            border-radius: 5px; /* Slightly rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4); /* Orange shadow */
+            transition: all 0.3s; /* Smooth transition for all properties */
+        }
+        
+        .shadow-btn:hover {
+            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.6); /* Larger shadow on hover */
+            transform: translateY(-3px); /* Lift effect on hover */
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .button-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CSS Button Styles</h1>
+            <p class="subtitle">A collection of different button styles with CSS code examples and English comments</p>
+        </header>
+        
+        <div class="button-grid">
+            <!-- Solid Button -->
+            <div class="button-card">
+                <div class="card-header">Solid Button</div>
+                <div class="card-content">
+                    <div class="button-demo">
+                        <button class="solid-btn">Solid Button</button>
+                    </div>
+                    <div class="code-container">
+                        <span class="comment">/* Solid button with hover effect */</span><br>
+                        <span class="selector">.solid-btn</span> {<br>
+                        &nbsp;&nbsp;<span class="property">background-color</span>: <span class="value">#3498db</span>; <span class="comment">/* Solid blue background */</span><br>
+                        &nbsp;&nbsp;<span class="property">color</span>: <span class="value">white</span>; <span class="comment">/* White text color */</span><br>
+                        &nbsp;&nbsp;<span class="property">border</span>: <span class="value">none</span>; <span class="comment">/* Remove default border */</span><br>
+                        &nbsp;&nbsp;<span class="property">padding</span>: <span class="value">15px 30px</span>; <span class="comment">/* Vertical and horizontal padding */</span><br>
+                        &nbsp;&nbsp;<span class="property">font-size</span>: <span class="value">1.1rem</span>; <span class="comment">/* Font size */</span><br>
+                        &nbsp;&nbsp;<span class="property">border-radius</span>: <span class="value">5px</span>; <span class="comment">/* Slightly rounded corners */</span><br>
+                        &nbsp;&nbsp;<span class="property">cursor</span>: <span class="value">pointer</span>; <span class="comment">/* Pointer cursor on hover */</span><br>
+                        &nbsp;&nbsp;<span class="property">transition</span>: <span class="value">background-color 0.3s</span>; <span class="comment">/* Smooth transition for background */</span><br>
+                        }<br><br>
+                        
+                        <span class="selector">.solid-btn:hover</span> {<br>
+                        &nbsp;&nbsp;<span class="property">background-color</span>: <span class="value">#2980b9</span>; <span class="comment">/* Darker blue on hover */</span><br>
+                        }
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Outline Button -->
+            <div class="button-card">
+                <div class="card-header">Outline Button</div>
+                <div class="card-content">
+                    <div class="button-demo">
+                        <button class="outline-btn">Outline Button</button>
+                    </div>
+                    <div class="code-container">
+                        <span class="comment">/* Outline button with color change on hover */</span><br>
+                        <span class="selector">.outline-btn</span> {<br>
+                        &nbsp;&nbsp;<span class="property">background-color</span>: <span class="value">transparent</span>; <span class="comment">/* Transparent background */</span><br>
+                        &nbsp;&nbsp;<span class="property">color</span>: <span class="value">#3498db</span>; <span class="comment">/* Blue text color */</span><br>
+                        &nbsp;&nbsp;<span class="property">border</span>: <span class="value">2px solid #3498db</span>; <span class="comment">/* Blue border */</span><br>
+                        &nbsp;&nbsp;<span class="property">padding</span>: <span class="value">15px 30px</span>; <span class="comment">/* Vertical and horizontal padding */</span><br>
+                        &nbsp;&nbsp;<span class="property">font-size</span>: <span class="value">1.1rem</span>; <span class="comment">/* Font size */</span><br>
+                        &nbsp;&nbsp;<span class="property">border-radius</span>: <span class="value">5px</span>; <span class="comment">/* Slightly rounded corners */</span><br>
+                        &nbsp;&nbsp;<span class="property">cursor</span>: <span class="value">pointer</span>; <span class="comment">/* Pointer cursor on hover */</span><br>
+                        &nbsp;&nbsp;<span class="property">transition</span>: <span class="value">all 0.3s</span>; <span class="comment">/* Smooth transition for all properties */</span><br>
+                        }<br><br>
+                        
+                        <span class="selector">.outline-btn:hover</span> {<br>
+                        &nbsp;&nbsp;<span class="property">background-color</span>: <span class="value">#3498db</span>; <span class="comment">/* Blue background on hover */</span><br>
+                        &nbsp;&nbsp;<span class="property">color</span>: <span class="value">white</span>; <span class="comment">/* White text on hover */</span><br>
+                        }
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Rounded Button -->
+            <div class="button-card">
+                <div class="card-header">Rounded Button</div>
+                <div class="card-content">
+                    <div class="button-demo">
+                        <button class="rounded-btn">Rounded Button</button>
+                    </div>
+                    <div class="code-container">
+                        <span class="comment">/* Rounded button with scale effect on hover */</span><br>
+                        <span class="selector">.rounded-btn</span> {<br>
+                        &nbsp;&nbsp;<span class="property">background-color</span>: <span class="value">#9b59b6</span>; <span class="comment">/* Purple background */</span><br>
+                        &nbsp;&nbsp;<span class="property">color</span>: <span class="value">white</span>; <span class="comment">/* White text color */</span><br>
+                        &nbsp;&nbsp;<span class="property">border</span>: <span class="value">none</span>; <span class="comment">/* Remove default border */</span><br>
+                        &nbsp;&nbsp;<span class="property">padding</span>: <span class="value">15px 30px</span>; <span class="comment">/* Vertical and horizontal padding */</span><br>
+                        &nbsp;&nbsp;<span class="property">font-size</span>: <span class="value">1.1rem</span>; <span class="comment">/* Font size */</span><br>
+                        &nbsp;&nbsp;<span class="property">border-radius</span>: <span class="value">30px</span>; <span class="comment">/* Fully rounded corners */</span><br>
+                        &nbsp;&nbsp;<span class="property">cursor</span>: <span class="value">pointer</span>; <span class="comment">/* Pointer cursor on hover */</span><br>
+                        &nbsp;&nbsp;<span class="property">transition</span>: <span class="value">all 0.3s</span>; <span class="comment">/* Smooth transition for all properties */</span><br>
+                        }<br><br>
+                        
+                        <span class="selector">.rounded-btn:hover</span> {<br>
+                        &nbsp;&nbsp;<span class="property">background-color</span>: <span class="value">#8e44ad</span>; <span class="comment">/* Darker purple on hover */</span><br>
+                        &nbsp;&nbsp;<span class="property">transform</span>: <span class="value">scale(1.05)</span>; <span class="comment">/* Slightly enlarge on hover */</span><br>
+                        }
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gradient Button -->
+            <div class="button-card">
+                <div class="card-header">Gradient Button</div>
+                <div class="card-content">
+                    <div class="button-demo">
+                        <button class="gradient-btn">Gradient Button</button>
+                    </div>
+                    <div class="code-container">
+                        <span class="comment">/* Gradient button with reverse effect on hover */</span><br>
+                        <span class="selector">.gradient-btn</span> {<br>
+                        &nbsp;&nbsp;<span class="property">background</span>: <span class="value">linear-gradient(to right, #ff9a9e, #fad0c4)</span>; <span class="comment">/* Gradient background */</span><br>
+                        &nbsp;&nbsp;<span class="property">color</span>: <span class="value">#333</span>; <span class="comment">/* Dark text color */</span><br>
+                        &nbsp;&nbsp;<span class="property">border</span>: <span class="value">none</span>; <span class="comment">/* Remove default border */</span><br>
+                        &nbsp;&nbsp;<span class="property">padding</span>: <span class="value">15px 30px</span>; <span class="comment">/* Vertical and horizontal padding */</span><br>
+                        &nbsp;&nbsp;<span class="property">font-size</span>: <span class="value">1.1rem</span>; <span class="comment">/* Font size */</span><br>
+                        &nbsp;&nbsp;<span class="property">border-radius</span>: <span class="value">5px</span>; <span class="comment">/* Slightly rounded corners */</span><br>
+                        &nbsp;&nbsp;<span class="property">cursor</span>: <span class="value">pointer</span>; <span class="comment">/* Pointer cursor on hover */</span><br>
+                        &nbsp;&nbsp;<span class="property">transition</span>: <span class="value">all 0.3s</span>; <span class="comment">/* Smooth transition for all properties */</span><br>
+                        }<br><br>
+                        
+                        <span class="selector">.gradient-btn:hover</span> {<br>
+                        &nbsp;&nbsp;<span class="property">background</span>: <span class="value">linear-gradient(to right, #fad0c4, #ff9a9e)</span>; <span class="comment">/* Reverse gradient on hover */</span><br>
+                        &nbsp;&nbsp;<span class="property">box-shadow</span>: <span class="value">0 5px 15px rgba(0, 0, 0, 0.1)</span>; <span class="comment">/* Add shadow on hover */</span><br>
+                        }
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hover Animation Button -->
+            <div class="button-card">
+                <div class="card-header">Hover Animation Button</div>
+                <div class="card-content">
+                    <div class="button-demo">
+                        <button class="hover-animation-btn">Hover Animation</button>
+                    </div>
+                    <div class="code-container">
+                        <span class="comment">/* Button with slide-in animation on hover */</span><br>
+                        <span class="selector">.hover-animation-btn</span> {<br>
+                        &nbsp;&nbsp;<span class="property">background-color</span>: <span class="value">#2ecc71</span>; <span class="comment">/* Green background */</span><br>
+                        &nbsp;&nbsp;<span class="property">color</span>: <span class="value">white</span>; <span class="comment">/* White text color */</span><br>
+                        &nbsp;&nbsp;<span class="property">border</span>: <span class="value">none</span>; <span class="comment">/* Remove default border */</span><br>
+                        &nbsp;&nbsp;<span class="property">padding</span>: <span class="value">15px 30px</span>; <span class="comment">/* Vertical and horizontal padding */</span><br>
+                        &nbsp;&nbsp;<span class="property">font-size</span>: <span class="value">1.1rem</span>; <span class="comment">/* Font size */</span><br>
+                        &nbsp;&nbsp;<span class="property">border-radius</span>: <span class="value">5px</span>; <span class="comment">/* Slightly rounded corners */</span><br>
+                        &nbsp;&nbsp;<span class="property">cursor</span>: <span class="value">pointer</span>; <span class="comment">/* Pointer cursor on hover */</span><br>
+                        &nbsp;&nbsp;<span class="property">position</span>: <span class="value">relative</span>; <span class="comment">/* Positioning context for pseudo-element */</span><br>
+                        &nbsp;&nbsp;<span class="property">overflow</span>: <span class="value">hidden</span>; <span class="comment">/* Hide overflow from pseudo-element */</span><br>
+                        &nbsp;&nbsp;<span class="property">z-index</span>: <span class="value">1</span>; <span class="comment">/* Ensure text is above pseudo-element */</span><br>
+                        }<br><br>
+                        
+                        <span class="selector">.hover-animation-btn::before</span> {<br>
+                        &nbsp;&nbsp;<span class="property">content</span>: <span class="value">''</span>; <span class="comment">/* Empty content for pseudo-element */</span><br>
+                        &nbsp;&nbsp;<span class="property">position</span>: <span class="value">absolute</span>; <span class="comment">/* Absolute positioning */</span><br>
+                        &nbsp;&nbsp;<span class="property">top</span>: <span class="value">0</span>; <span class="comment">/* Position from top */</span><br>
+                        &nbsp;&nbsp;<span class="property">left</span>: <span class="value">0</span>; <span class="comment">/* Position from left */</span><br>
+                        &nbsp;&nbsp;<span class="property">width</span>: <span class="value">100%</span>; <span class="comment">/* Full width */</span><br>
+                        &nbsp;&nbsp;<span class="property">height</span>: <span class="value">100%</span>; <span class="comment">/* Full height */</span><br>
+                        &nbsp;&nbsp;<span class="property">background-color</span>: <span class="value">#27ae60</span>; <span class="comment">/* Darker green */</span><br>
+                        &nbsp;&nbsp;<span class="property">transform</span>: <span class="value">translateX(-100%)</span>; <span class="comment">/* Start from left outside */</span><br>
+                        &nbsp;&nbsp;<span class="property">transition</span>: <span class="value">transform 0.3s</span>; <span class="comment">/* Smooth transition for transform */</span><br>
+                        &nbsp;&nbsp;<span class="property">z-index</span>: <span class="value">-1</span>; <span class="comment">/* Behind the text */</span><br>
+                        }<br><br>
+                        
+                        <span class="selector">.hover-animation-btn:hover::before</span> {<br>
+                        &nbsp;&nbsp;<span class="property">transform</span>: <span class="value">translateX(0)</span>; <span class="comment">/* Slide in on hover */</span><br>
+                        }
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Glowing Effect Button -->
+            <div class="button-card">
+                <div class="card-header">Glowing Effect Button</div>
+                <div class="card-content">
+                    <div class="button-demo">
+                        <button class="glowing-btn">Glowing Button</button>
+                    </div>
+                    <div class="code-container">
+                        <span class="comment">/* Button with glowing effect on hover */</span><br>
+                        <span class="selector">.glowing-btn</span> {<br>
+                        &nbsp;&nbsp;<span class="property">background-color</span>: <span class="value">#e74c3c</span>; <span class="comment">/* Red background */</span><br>
+                        &nbsp;&nbsp;<span class="property">color</span>: <span class="value">white</span>; <span class="comment">/* White text color */</span><br>
+                        &nbsp;&nbsp;<span class="property">border</span>: <span class="value">none</span>; <span class="comment">/* Remove default border */</span><br>
+                        &nbsp;&nbsp;<span class="property">padding</span>: <span class="value">15px 30px</span>; <span class="comment">/* Vertical and horizontal padding */</span><br>
+                        &nbsp;&nbsp;<span class="property">font-size</span>: <span class="value">1.1rem</span>; <span class="comment">/* Font size */</span><br>
+                        &nbsp;&nbsp;<span class="property">border-radius</span>: <span class="value">5px</span>; <span class="comment">/* Slightly rounded corners */</span><br>
+                        &nbsp;&nbsp;<span class="property">cursor</span>: <span class="value">pointer</span>; <span class="comment">/* Pointer cursor on hover */</span><br>
+                        &nbsp;&nbsp;<span class="property">transition</span>: <span class="value">all 0.3s</span>; <span class="comment">/* Smooth transition for all properties */</span><br>
+                        }<br><br>
+                        
+                        <span class="selector">.glowing-btn:hover</span> {<br>
+                        &nbsp;&nbsp;<span class="property">box-shadow</span>: <span class="value">0 0 15px #e74c3c</span>; <span class="comment">/* Red glow effect on hover */</span><br>
+                        &nbsp;&nbsp;<span class="property">transform</span>: <span class="value">translateY(-2px)</span>; <span class="comment">/* Slight lift on hover */</span><br>
+                        }
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Box Shadow Button -->
+            <div class="button-card">
+                <div class="card-header">Box Shadow Button</div>
+                <div class="card-content">
+                    <div class="button-demo">
+                        <button class="shadow-btn">Shadow Button</button>
+                    </div>
+                    <div class="code-container">
+                        <span class="comment">/* Button with shadow effect */</span><br>
+                        <span class="selector">.shadow-btn</span> {<br>
+                        &nbsp;&nbsp;<span class="property">background-color</span>: <span class="value">#f39c12</span>; <span class="comment">/* Orange background */</span><br>
+                        &nbsp;&nbsp;<span class="property">color</span>: <span class="value">white</span>; <span class="comment">/* White text color */</span><br>
+                        &nbsp;&nbsp;<span class="property">border</span>: <span class="value">none</span>; <span class="comment">/* Remove default border */</span><br>
+                        &nbsp;&nbsp;<span class="property">padding</span>: <span class="value">15px 30px</span>; <span class="comment">/* Vertical and horizontal padding */</span><br>
+                        &nbsp;&nbsp;<span class="property">font-size</span>: <span class="value">1.1rem</span>; <span class="comment">/* Font size */</span><br>
+                        &nbsp;&nbsp;<span class="property">border-radius</span>: <span class="value">5px</span>; <span class="comment">/* Slightly rounded corners */</span><br>
+                        &nbsp;&nbsp;<span class="property">cursor</span>: <span class="value">pointer</span>; <span class="comment">/* Pointer cursor on hover */</span><br>
+                        &nbsp;&nbsp;<span class="property">box-shadow</span>: <span class="value">0 5px 15px rgba(243, 156, 18, 0.4)</span>; <span class="comment">/* Orange shadow */</span><br>
+                        &nbsp;&nbsp;<span class="property">transition</span>: <span class="value">all 0.3s</span>; <span class="comment">/* Smooth transition for all properties */</span><br>
+                        }<br><br>
+                        
+                        <span class="selector">.shadow-btn:hover</span> {<br>
+                        &nbsp;&nbsp;<span class="property">box-shadow</span>: <span class="value">0 8px 25px rgba(243, 156, 18, 0.6)</span>; <span class="comment">/* Larger shadow on hover */</span><br>
+                        &nbsp;&nbsp;<span class="property">transform</span>: <span class="value">translateY(-3px)</span>; <span class="comment">/* Lift effect on hover */</span><br>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>CSS Button Styles - Created with HTML and CSS <strong><a style="color: #3498db; text-decoration: none;" href="https://www.youtube.com/channel/UC8YqgNZW1CwhbDv9Cl-23BQ" target="_blank">By Mr. Gaber Samir</a></strong></p> 
+            <p>Each example includes the button element and corresponding CSS code with English comments</p>
+        </footer>
+    </div>
+</body>
+</html>
